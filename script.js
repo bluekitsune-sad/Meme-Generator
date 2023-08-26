@@ -3,4 +3,4 @@ function reloadPage() {
     location.reload();
   }, 5000); // 5 seconds
 }
-window.onload = reloadPage;
+window.addEventListener("load", reloadPage);
