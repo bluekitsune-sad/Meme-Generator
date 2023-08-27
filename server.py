@@ -1,6 +1,7 @@
 import http.server
 import socketserver
 import threading
+import webbrowser
 
 class MyHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
@@ -17,7 +18,7 @@ def reload_page():
         f.write(content)
 
 def start_timer():
-    threading.Timer(60, reload_page).start()
+    threading.Timer(10, reload_page).start()
 
 if __name__ == "__main__":
     # Set the port number to serve the files
@@ -26,7 +27,12 @@ if __name__ == "__main__":
     # Create a server with the custom request handler
     with socketserver.TCPServer(("", PORT), MyHttpRequestHandler) as httpd:
         print(f"Serving at http://localhost:{PORT}")
+        
+        # Open the default web browser
+        webbrowser.open_new_tab(f"http://localhost:{PORT}")
+        
         # Start the timer to reload the page
         start_timer()
+        
         # Start serving
         httpd.serve_forever()
