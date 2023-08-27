@@ -1,2 +1,2 @@
 # Meme-Generator
-This will generate random memes from a api. This is in process . . .
+This will generate random memes from apis. This is in process . . .
