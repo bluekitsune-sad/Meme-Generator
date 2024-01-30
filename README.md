@@ -8,7 +8,7 @@
 then the brower will open autpmatically and will change meme with a 5 seconds delay. </p>
 
 
-
+Made By [saad]
 
 Thank You For Reading
 Enjoy.
